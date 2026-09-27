@@ -1,8 +1,8 @@
 {
-	"name": "ds_industry",
+	"name": "ds_bronze",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_github",
+			"referenceName": "ls_adls",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -14,17 +14,18 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation",
-				"relativeUrl": {
-					"value": "/hamzamdn077/smart-manufacturing-platform/refs/heads/main/data_generation/output/@{dataset().file_name}",
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().file_name",
 					"type": "Expression"
-				}
+				},
+				"folderPath": "factory_data",
+				"fileSystem": "bronze"
 			},
 			"columnDelimiter": ",",
-			"rowDelimiter": "\n",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
-			"quoteChar": null
+			"quoteChar": "\""
 		},
 		"schema": []
 	}

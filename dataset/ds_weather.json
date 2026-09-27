@@ -1,0 +1,29 @@
+{
+	"name": "ds_weather",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_weather",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"lat": {
+				"type": "string"
+			},
+			"long": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "/v1/archive?latitude=@{dataset().lat}&longitude=@{dataset().long}&start_date=2026-01-01&end_date=2026-01-30&hourly=temperature_2m,relative_humidity_2m,precipitation,surface_pressure,wind_speed_10m",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	}
+}
