@@ -1,0 +1,4 @@
+factory_id,factory_name,city,country,latitude,longitude
+F01,Casablanca Manufacturing Plant,Casablanca,Morocco,33.5731,-7.5898
+F02,Tangier Manufacturing Plant,Tangier,Morocco,35.7595,-5.834
+F03,Fez Manufacturing Plant,Fez,Morocco,34.0331,-5.0003

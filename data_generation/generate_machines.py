@@ -13,6 +13,10 @@ np.random.seed(RANDOM_SEED)
 
 def generate_machines():
 
+    factories = pd.read_csv(
+        OUTPUT_DIR / "factories.csv"
+    )
+
     machine_types = [
         "CNC",
         "Assembly",
@@ -27,16 +31,31 @@ def generate_machines():
 
     for i in range(1, NUM_MACHINES + 1):
 
+        factory = factories.iloc[
+            (i - 1) % len(factories)
+        ]
+
         machines.append({
             "machine_id": f"M{i:03d}",
-            "factory_id": f"F{((i - 1) // 10) + 1:02d}",
-            "machine_type": np.random.choice(machine_types),
+            "factory_id": factory["factory_id"],
+            "machine_type": np.random.choice(
+                machine_types
+            ),
             "installation_date": (
                 start_date -
-                pd.Timedelta(days=np.random.randint(365, 2500))
+                pd.Timedelta(
+                    days=np.random.randint(
+                        365,
+                        2500
+                    )
+                )
             ).date(),
             "rated_power_kw": round(
-                np.random.uniform(10, 50), 2
+                np.random.uniform(
+                    10,
+                    50
+                ),
+                2
             ),
             "status": "active"
         })
@@ -46,13 +65,19 @@ def generate_machines():
 
 def main():
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    OUTPUT_DIR.mkdir(
+        parents=True,
+        exist_ok=True
+    )
 
     df = generate_machines()
 
     path = OUTPUT_DIR / "machines.csv"
 
-    df.to_csv(path, index=False)
+    df.to_csv(
+        path,
+        index=False
+    )
 
     print(f"Created {path}")
     print(f"Records: {len(df)}")
