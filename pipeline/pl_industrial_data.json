@@ -50,13 +50,29 @@
 							"inputs": [
 								{
 									"referenceName": "ds_weather",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"lat": {
+											"value": "@item().latitude",
+											"type": "Expression"
+										},
+										"long": {
+											"value": "@item().longitude",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
 								{
 									"referenceName": "weather_data",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"folder_name": {
+											"value": "@item().factory_id",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
