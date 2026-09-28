@@ -52,7 +52,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy data1",
+							"name": "get_weather",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -104,7 +104,13 @@
 							"outputs": [
 								{
 									"referenceName": "weather_data",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"folder_name": {
+											"value": "@item().factory_id",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}

@@ -5,13 +5,21 @@
 			"referenceName": "ls_adls",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"folder_name": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "weather.json",
-				"folderPath": "weather_data",
+				"folderPath": {
+					"value": "weather_data/@{dataset().folder_name}",
+					"type": "Expression"
+				},
 				"fileSystem": "bronze"
 			}
 		},
