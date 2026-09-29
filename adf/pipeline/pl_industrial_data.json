@@ -27,37 +27,43 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "JsonSource",
+									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "HttpReadSettings",
 										"requestMethod": "GET"
 									},
 									"formatSettings": {
-										"type": "JsonReadSettings"
+										"type": "DelimitedTextReadSettings"
 									}
 								},
 								"sink": {
-									"type": "JsonSink",
+									"type": "DelimitedTextSink",
 									"storeSettings": {
 										"type": "AzureBlobFSWriteSettings"
 									},
 									"formatSettings": {
-										"type": "JsonWriteSettings"
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
 									}
 								},
-								"enableStaging": false
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
 								{
-									"referenceName": "ds_weather",
+									"referenceName": "ds_industry",
 									"type": "DatasetReference",
 									"parameters": {
-										"lat": {
-											"value": "@item().latitude",
-											"type": "Expression"
-										},
-										"long": {
-											"value": "@item().longitude",
+										"file_name": {
+											"value": "@item()",
 											"type": "Expression"
 										}
 									}
@@ -65,11 +71,11 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "weather_data",
+									"referenceName": "ds_bronze",
 									"type": "DatasetReference",
 									"parameters": {
-										"folder_name": {
-											"value": "@item().factory_id",
+										"file_name": {
+											"value": "@item()",
 											"type": "Expression"
 										}
 									}
