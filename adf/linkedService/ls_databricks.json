@@ -1,21 +1,13 @@
 {
 	"name": "ls_databricks",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureDatabricks",
 		"typeProperties": {
 			"domain": "https://adb-7405610652702143.3.azuredatabricks.net",
-			"newClusterNodeType": "Standard_DS3_v2",
-			"newClusterNumOfWorker": "1:3",
-			"newClusterSparkEnvVars": {
-				"PYSPARK_PYTHON": "/databricks/python3/bin/python3"
-			},
-			"newClusterVersion": "13.3.x-scala2.12",
-			"newClusterDriverNodeType": "Standard_DS3_v2",
-			"clusterOption": "Autoscaling",
-			"newClusterInitScripts": [],
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDM3MDcxQTQ4LURBMjQtNEY1Qi05RjBGLUIyRDhDMTFFNjA5RF9jMmRiYWUyNy01Y2E0LTQ3NWUtODY0ZC1mNzhjZDJkODE4YjYiDQp9"
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/9dcc1955-a0c6-4abd-bbd4-9d0a8a6b487b/resourceGroups/rg-smart-manufacturing/providers/Microsoft.Databricks/workspaces/smart-manufacturing"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
