@@ -6,8 +6,8 @@
 		"type": "AzureDatabricks",
 		"typeProperties": {
 			"domain": "https://adb-7405607316341662.2.azuredatabricks.net",
-			"existingClusterId": "02dd54f5-7b1b-380e-919e-f2b6caa0cced",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDM3MDcxQTQ4LURBMjQtNEY1Qi05RjBGLUIyRDhDMTFFNjA5RF9hMWI1MjAwYy03ZjJlLTRiMWItYWUyNS0yMzUyYmY1NWI3NDYiDQp9"
+			"existingClusterId": "0929-011923-xan1edgi",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDM3MDcxQTQ4LURBMjQtNEY1Qi05RjBGLUIyRDhDMTFFNjA5RF9lMzFmMmUzMy00OWZjLTQ0NjctOTk1ZS1mYzkyNjNjYjQyMmEiDQp9"
 		}
 	}
 }
