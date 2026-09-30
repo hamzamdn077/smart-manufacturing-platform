@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: silver
+    catalog: smart_manufacturing_classic
+    schema: lakehouse
+    tables:
+      - name: factories
+      - name: machines
+      - name: production
+      - name: maintenance
+      - name: quality
+      - name: weather
+      - name: telemetry
