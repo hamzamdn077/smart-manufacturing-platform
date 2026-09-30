@@ -10,3 +10,13 @@ __pycache__/
 .DS_Store
 .idea/
 .vscode/        
+
+airflow/logs/
+airflow/airflow.cfg
+airflow/airflow.db
+airflow/webserver_config.py
+
+
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
